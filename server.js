@@ -21,8 +21,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 dotenv.config(); // Load environment variables
 
-// const API_KEY = process.env.API_KEY;
-const API_KEY = 'AIzaSyBShWuq3-XNtDWCGJDR9tQsk083mfAUNe0';
+const API_KEY = process.env.API_KEY;
+// const API_KEY = 'AIzaSyBShWuq3-XNtDWCGJDR9tQsk083mfAUNe0';
 
 if (!API_KEY) {
   console.error("API_KEY is missing in the .env file.");
@@ -49,7 +49,6 @@ app.post("/api", async (req, res) => {
     }
 
     const result = await model.generateContent({ contents: [{ parts: [{ text: prompt }] }] });
-
     const aiResponse = result.response?.candidates?.[0]?.content?.parts?.[0]?.text || "No response available.";
 //    console.log(aiResponse);
     res.json({ message: aiResponse });

@@ -21,8 +21,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 dotenv.config(); // Load environment variables
 
-const API_KEY = process.env.API_KEY;
-// const API_KEY = 'AIzaSyBShWuq3-XNtDWCGJDR9tQsk083mfAUNe0';
+// const API_KEY = process.env.API_KEY;
+const API_KEY = 'AIzaSyBShWuq3-XNtDWCGJDR9tQsk083mfAUNe0';
 
 if (!API_KEY) {
   console.error("API_KEY is missing in the .env file.");
